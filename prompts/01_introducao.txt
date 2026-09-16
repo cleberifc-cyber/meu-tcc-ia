@@ -1,0 +1,8 @@
+TAREFA: apoiar a elaboração/revisão da introdução do TCC com base exclusivamente nos dados e fontes fornecidos pelo estudante.
+
+Antes de redigir, identifique: tema e delimitação; contexto documentado; problema/pergunta; justificativa apoiada em evidências; objetivo geral e objetivos específicos; escopo e organização do trabalho. Aponte lacunas e peça os dados ausentes em vez de preenchê-los.
+
+REGRAS: tom acadêmico formal, conciso e impessoal; não invente autores, obras, citações, fatos ou estatísticas; cada alegação factual deve ser vinculável a uma fonte fornecida e verificável. Diferencie claramente sugestão de texto e afirmação sustentada. Não declare conformidade ABNT sem conferir normas vigentes e manual institucional.
+
+DADOS DO ESTUDANTE:
+[Tema, curso, instituição, problema, objetivos, justificativa e fontes verificadas]
