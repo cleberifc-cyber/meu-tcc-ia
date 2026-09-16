@@ -76,7 +76,7 @@ Formatting coverage is explicit. Unsupported source types, unverified typography
 
 ### 4.4 Document build
 
-Use a single Markdown-based source of truth and a tested export pipeline. Pandoc is the leading candidate because its official manual documents DOCX reference templates, PDF output, and citation processing from bibliographic data/CSL styles. The implementation spike must verify that the selected version and custom ABNT profile can meet the acceptance fixtures before this dependency is committed as the renderer. DOCX is the primary editable deliverable; PDF is an optional reproducible build requiring a configured PDF engine.
+Use a single Markdown-based source of truth and a tested export pipeline. The local implementation environment already has `python-docx` and does not have Pandoc, so `python-docx` is the leading candidate for editable DOCX output and simple installation. Its ability to express the needed profile and fixtures must be verified before the renderer is considered established. PDF is an optional reproducible build through LibreOffice or another explicitly detected local converter; never make PDF conversion a hidden requirement for the clone-first path. Pandoc remains an alternative only if a concrete fixture comparison shows a clear benefit.
 
 The exported document includes only content present in the project source. It must not invent title-page facts, page numbers for citations, tables, figures, appendices, or research results. Build output includes a machine-readable report listing inputs, profile version, renderer version, and warnings.
 
@@ -181,7 +181,8 @@ Add selected provider adapters only when consent display, secret handling, cost 
 - DataCite REST API guide (public DOI metadata retrieval and provenance): <https://support.datacite.org/docs/rest-api>
 - DataCite single-DOI endpoint (metadata version/source fields): <https://support.datacite.org/docs/api-get-doi>
 - ABNT official catalog for standards search/status/access: <https://www.abntcatalogo.com.br/>
-- Pandoc official manual for DOCX reference documents, citations/CSL and PDF output: <https://pandoc.org/MANUAL.html>
+- `python-docx` project and documentation for creating/editing OOXML DOCX files: <https://python-docx.readthedocs.io/>
+- Pandoc official manual (evaluated as an alternative for reference DOCX, citations/CSL and PDF output): <https://pandoc.org/MANUAL.html>
 - GitHub Actions billing and usage documentation: <https://docs.github.com/en/actions/concepts/billing-and-usage>
 
 ## 11. Self-review checklist
@@ -190,6 +191,7 @@ Add selected provider adapters only when consent display, secret handling, cost 
 - “Live bibliographic source lookup” is distinct from “live access to the full normative text”.
 - Automatic profile revision is explicitly gated on official source verification and authorized access; profile version and last-check date are required outputs.
 - DOCX is the editable primary deliverable; PDF prerequisites are explicit.
+- Renderer choice is based on an installable local spike; DOCX fixtures determine whether `python-docx` meets the intended output contract.
 - A no-AI-key path remains usable, while automated generation clearly requires user-provided provider access.
 - Tests cover source data, failure modes, profile versions, and rendered output before compliance claims are made.
 - User-facing promise is high-quality guided assistance, not guaranteed academic success or universal compliance.
