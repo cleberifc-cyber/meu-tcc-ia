@@ -1,0 +1,25 @@
+name: Relatar um problema
+description: Reporte falhas reproduzíveis sem anexar seu TCC ou segredos.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Versão do TCC Kit, Python e sistema operacional
+      placeholder: "0.1.0a1; Python 3.12; Windows 11"
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Comando executado e saída redigida
+      description: Não inclua DOI privado, chaves de API, dados pessoais ou manuscrito.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Resultado esperado e observado
+    validations:
+      required: true

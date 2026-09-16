@@ -1,0 +1,21 @@
+id = "abnt-br-preview"
+display_name = "ABNT Brasil — perfil de prévia"
+status = "preview"
+standards = []
+official_catalog_url = "https://www.abntcatalogo.com.br/"
+verified_at = ""
+supported_blocks = ["frontmatter", "heading", "paragraph", "list", "table", "local_image", "citation_marker"]
+
+[document]
+page_size = "A4"
+margin_top_mm = 30
+margin_left_mm = 30
+margin_bottom_mm = 20
+margin_right_mm = 20
+font_name = "Arial"
+font_size_pt = 12
+line_spacing = 1.5
+paragraph_alignment = "justify"
+
+[references]
+render_types = ["article-journal", "book", "chapter", "thesis", "dataset"]

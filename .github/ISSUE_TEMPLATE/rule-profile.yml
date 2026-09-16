@@ -1,0 +1,25 @@
+name: Sugerir regra de formatação
+description: Compartilhe uma diferença verificável sem copiar texto protegido da norma.
+title: "[Perfil]: "
+labels: [formatting, needs-review]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Fonte oficial/institucional e edição
+      description: Informe catálogo, edição e acesso autorizado; não anexe a norma.
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Exemplo mínimo original e comportamento esperado
+      description: Não inclua trabalho acadêmico privado nem trechos extensos protegidos.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Cobertura afetada e limitações
+    validations:
+      required: true

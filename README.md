@@ -1,23 +1,73 @@
-# meu-tcc-ia
+# TCC Kit — pesquisa, fontes e formatação em um fluxo local
 
-Repositório de apoio à elaboração de um Trabalho de Conclusão de Curso (TCC) com assistência de IA. A autoria, a verificação das fontes, a adequação às regras da instituição e a decisão sobre cada trecho permanecem sob responsabilidade do estudante e de seu orientador.
+[English overview](README.en.md)
 
-## Fluxo sugerido
+Ferramentas abertas, em português, para organizar um Trabalho de Conclusão de Curso, registrar metadados de fontes por DOI, conferir citações e gerar um DOCX editável. O projeto é alfa (`0.1.0a1`): funciona sem conta de IA e mantém o manuscrito no seu computador.
 
-1. Defina tema, problema, objetivos e escopo com o orientador.
-2. Registre fontes rastreáveis em `src/referencias.bib`; não aceite referências que não possam ser localizadas.
-3. Use os roteiros em `prompts/` apenas como apoio, fornecendo fontes e limites explícitos.
-4. Revise cada afirmação, citação, dado e paráfrase contra a fonte original.
-5. Mantenha os textos aprovados em `src/` e confira as normas vigentes e o manual da instituição antes da entrega.
-6. A GitHub Action tenta compilar `src/tcc.md` para PDF quando esse arquivo existir; nenhum PDF é gerado a partir de conteúdo fictício.
+> O perfil incluído é `preview`, não certificação de conformidade ABNT. Ele não consulta automaticamente o texto vigente das normas. Confira o manual da sua instituição e as edições oficiais antes de entregar o trabalho.
 
-## Estrutura
+## Comece (Windows)
 
-- `prompts/`: roteiros de trabalho por etapa.
-- `templates/`: guia inicial e espaço para modelos autorizados.
-- `src/`: manuscrito e referências do estudante.
-- `.github/workflows/`: compilação automatizada do PDF.
+Instale Python 3.11 ou superior e Git. No PowerShell:
 
-## Segurança e integridade acadêmica
+```powershell
+git clone https://github.com/cleberifc-cyber/meu-tcc-ia.git
+cd meu-tcc-ia
+py -3 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -e .
+tcc-kit init .\meu-tcc
+tcc-kit prompt --project .\meu-tcc --section introducao
+tcc-kit check .\meu-tcc
+tcc-kit format .\meu-tcc --format docx
+```
 
-Nunca salve tokens, senhas, dados pessoais desnecessários ou material sem autorização neste repositório. Confirme as políticas da instituição sobre uso de IA, autoria, confidencialidade e divulgação. As normas ABNT e os regulamentos institucionais podem ser atualizados; consulte as versões aplicáveis e as orientações de sua instituição.
+Se ainda não tem uma fonte real, não use DOI de exemplo como se fosse referência. `source add` consulta uma agência DOI e metadados públicos no Crossref ou DataCite. Confira cada registro no site do DOI. A busca envia apenas o DOI, nunca o manuscrito.
+
+## macOS e Linux
+
+```sh
+git clone https://github.com/cleberifc-cyber/meu-tcc-ia.git
+cd meu-tcc-ia
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -e .
+tcc-kit init ./meu-tcc
+tcc-kit check ./meu-tcc
+tcc-kit format ./meu-tcc --format docx
+```
+
+Veja o [guia de início rápido](docs/quickstart.md) para modo interativo, respostas JSON e solução de problemas.
+
+## O que a versão alfa faz
+
+- Cria projeto com questionário, manuscrito Markdown, registro JSON de fontes e prompts por etapa.
+- Gera instruções contextualizadas sem chamar uma IA; copie-as para o assistente que preferir.
+- Consulta metadados DOI em APIs públicas Crossref/DataCite e registra proveniência local por campo.
+- Aponta citações `[@chave]` sem registro e metadados bibliográficos faltantes.
+- Renderiza DOCX com página de rosto, títulos, parágrafos, listas, tabelas e imagens locais no subconjunto documentado de Markdown.
+- Emite relatório JSON com perfil, avisos e hashes dos arquivos de entrada.
+
+## Formatação: transparência primeiro
+
+O perfil `abnt-br-preview` produz uma apresentação inicial configurável; não afirma ser implementação integral ou atualizada das NBR. Estruturas avançadas de Markdown, citações, tipos de referência, paginação e regras institucionais ainda não estão todas cobertas. A exportação lista avisos e mantém os arquivos fonte sem alteração. PDF automático ainda não está incluído nesta versão.
+
+O registro DOI usa metadados depositados por terceiros; pode haver lacunas ou erros. A ferramenta não baixa artigos completos, não inventa referências e não valida a qualidade científica de uma fonte. Consulte [estado e limites do perfil](docs/abnt/profile-status.md).
+
+## Privacidade e integridade acadêmica
+
+O padrão é local, sem provedor de IA, telemetria ou serviço hospedado. A única operação de rede implementada é a consulta DOI solicitada pelo usuário, enviando o identificador DOI. Leia [privacidade e dados](docs/privacy.md). Prompts não substituem orientação, leitura das fontes, autoria ou políticas da instituição.
+
+## Desenvolvimento
+
+```sh
+python -m pip install -e ".[test]"
+python -m pytest -q
+python -m build
+```
+
+Contribuições são bem-vindas: consulte [CONTRIBUTING.md](CONTRIBUTING.md), [CHANGELOG.md](CHANGELOG.md) e [ROADMAP.md](ROADMAP.md). Não há badge de CI até existir uma execução real bem-sucedida.
+
+## Licença
+
+Código e materiais originais sob MIT. Normas ABNT, dados de provedores e conteúdo de terceiros não estão incluídos e conservam seus direitos e termos; veja [THIRD_PARTY.md](THIRD_PARTY.md).

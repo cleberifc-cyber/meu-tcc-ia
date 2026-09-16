@@ -7,3 +7,11 @@
 __pycache__/
 .DS_Store
 Thumbs.db
+.venv/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+TCC_FORMATADO.docx
+*.report.json
+/meu-tcc/
