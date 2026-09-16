@@ -1,0 +1,9 @@
+# Segredos e arquivos locais
+.env
+.env.*
+!.env.example
+*token*
+*.pdf
+__pycache__/
+.DS_Store
+Thumbs.db
