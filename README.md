@@ -2,6 +2,8 @@
 
 [English overview](README.en.md)
 
+![TCC Kit — pesquisa, fontes e formatação](.github/social-preview.png)
+
 Ferramentas abertas, em português, para organizar um Trabalho de Conclusão de Curso, registrar metadados de fontes por DOI, conferir citações e gerar um DOCX editável. O projeto é alfa (`0.1.0a1`): funciona sem conta de IA e mantém o manuscrito no seu computador.
 
 > O perfil incluído é `preview`, não certificação de conformidade ABNT. Ele não consulta automaticamente o texto vigente das normas. Confira o manual da sua instituição e as edições oficiais antes de entregar o trabalho.
@@ -38,6 +40,19 @@ tcc-kit format ./meu-tcc --format docx
 ```
 
 Veja o [guia de início rápido](docs/quickstart.md) para modo interativo, respostas JSON e solução de problemas.
+
+## Teste rápido sem IA
+
+Depois de instalar, gere um projeto demonstrativo, peça um prompt e exporte o esqueleto:
+
+```sh
+tcc-kit init ./meu-tcc-demo --answers-json ./examples/demo/answers.json
+tcc-kit prompt --project ./meu-tcc-demo --section introducao
+tcc-kit check ./meu-tcc-demo
+tcc-kit format ./meu-tcc-demo --format docx
+```
+
+No PowerShell, troque `./` por `.\` se preferir. O exemplo é fictício, não traz fontes inventadas e não produz um TCC pronto. A pasta `meu-tcc-demo/` fica ignorada pelo Git.
 
 ## O que a versão alfa faz
 
