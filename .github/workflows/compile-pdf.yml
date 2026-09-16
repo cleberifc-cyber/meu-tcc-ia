@@ -3,8 +3,7 @@ name: Compilar TCC em PDF
 on:
   push:
     paths:
-      - 'src/**'
-      - '.github/workflows/compile-pdf.yml'
+      - "src/tcc.md"
   workflow_dispatch:
 
 permissions:
@@ -12,7 +11,6 @@ permissions:
 
 jobs:
   compilar:
-    if: ${{ hashFiles('src/tcc.md') != '' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
