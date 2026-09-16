@@ -1,0 +1,8 @@
+TAREFA: organizar uma síntese crítica do referencial teórico usando somente as fontes fornecidas e verificadas pelo estudante.
+
+Para cada fonte, registre a referência recebida, questão/conceito tratado, método (se informado), achados relevantes e limitações. Compare convergências e divergências sem atribuir aos autores ideias não presentes nas fontes. Marque afirmações sem evidência como [FONTE NECESSÁRIA] e inconsistências bibliográficas como [CONFERIR REFERÊNCIA].
+
+REGRAS: escrita acadêmica formal, coesa e concisa; não invente autores, títulos, DOI, páginas, citações ou dados; não simule leitura de documentos ausentes. Preserve distinção entre citação, paráfrase e análise do estudante.
+
+FONTES E TRECHOS AUTORIZADOS:
+[Inserir referências verificadas e excertos/notas com localização]
