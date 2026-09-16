@@ -83,6 +83,16 @@ python -m build
 
 Contribuições são bem-vindas: consulte [CONTRIBUTING.md](CONTRIBUTING.md), [CHANGELOG.md](CHANGELOG.md) e [ROADMAP.md](ROADMAP.md). Não há badge de CI até existir uma execução real bem-sucedida.
 
+## Apoie o projeto
+
+Contribuições de código, documentação e relatos de problemas são muito bem-vindas. Se preferir apoiar financeiramente, há um endereço opcional para USDT na rede TRON (TRC20):
+
+```text
+TQCMKPwkQwGCz31se4X4BqbzzFfmj7XK8D
+```
+
+Envie somente USDT pela rede TRON/TRC20. Confirme cuidadosamente a rede, o ativo e o endereço na sua carteira antes de enviar; transferências em criptoativos podem ser irreversíveis, e taxas de rede podem ser aplicadas. O apoio é voluntário, sem benefícios ou garantia de resposta/resultado. Nunca compartilhe sua frase-semente ou chave privada.
+
 ## Licença
 
 Código e materiais originais sob MIT. Normas ABNT, dados de provedores e conteúdo de terceiros não estão incluídos e conservam seus direitos e termos; veja [THIRD_PARTY.md](THIRD_PARTY.md).
